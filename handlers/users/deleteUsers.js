@@ -1,7 +1,5 @@
 const { getDbWithCollection } = require("../../db/mongo");
 const { ObjectId } = require("mongodb")
-// const logger = require("../../middleware/loggerWinson")
-
 
 const deleteUserHandler = async (req, res) => {
     const getDb = getDbWithCollection("users")
