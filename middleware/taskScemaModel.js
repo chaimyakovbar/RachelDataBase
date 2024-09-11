@@ -1,5 +1,4 @@
 const Joi = require('joi');
-// const logger = require("./loggerWinson");
 
 const validateRequest = (schema) => (req, res, next) => {
     const { body } = req;

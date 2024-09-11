@@ -19,7 +19,10 @@ const initServer = async () => {
 initServer();
 
 const createServer = async () => {
-    app.use(cors());
+    app.use(cors({
+        origin: 'https://your-frontend-service.onrender.com',
+        credentials: true, 
+      }))
     app.use(express.json());
     app.use('/images', express.static(path.join(__dirname, 'Images')));
     app.use(router);
