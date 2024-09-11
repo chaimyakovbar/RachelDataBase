@@ -19,7 +19,7 @@ const initServer = async () => {
 initServer()
 
 const allowedOrigins = [
-    'https://racheldatabase.onrender.com',
+    'https://rachelefinger.onrender.com/',
     'https://admin2rachel.onrender.com'
 ]
 
