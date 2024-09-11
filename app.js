@@ -16,24 +16,10 @@ const initServer = async () => {
     server.listen(port);
 };
 
-initServer()
-
-const allowedOrigins = [
-    'https://rachelefinger.onrender.com/',
-    'https://admin2rachel.onrender.com'
-]
+initServer();
 
 const createServer = async () => {
-    app.use(cors({
-        origin: function (origin, callback) {
-            if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-                callback(null, true);
-            } else {
-                callback(new Error('Not allowed by CORS'));
-            }
-        },
-        credentials: true
-    }));
+    app.use(cors());
     app.use(express.json());
     app.use('/images', express.static(path.join(__dirname, 'Images')));
     app.use(router);
