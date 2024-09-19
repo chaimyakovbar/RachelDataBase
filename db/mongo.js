@@ -22,12 +22,10 @@ const connectToDB = async () => {
   }
 };
 
-// פונקציה לקבלת מסד הנתונים
 const getDB = () => {
   return internal.db;
 };
 
-// פונקציה לקבלת אוסף (collection) ממסד הנתונים
 const getDbWithCollection = (collection) => {
   if (internal.db) {
     return internal.db.collection(collection); // מחזיר אוסף מהמסד נתונים
