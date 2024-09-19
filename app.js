@@ -11,6 +11,7 @@ const app = express();
 const initServer = async () => {
     await connectToDB();
 
+    createServer();
     const server = http.createServer(app);
     const port = process.env.PORT || 3010;
     server.listen(port);
@@ -20,9 +21,9 @@ initServer();
 
 const createServer = async () => {
     app.use(cors());
+
     app.use(express.json());
     app.use('/images', express.static(path.join(__dirname, 'Images')));
     app.use(router);
-};
+;}
 
-createServer();

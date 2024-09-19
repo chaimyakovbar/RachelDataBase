@@ -1,10 +1,10 @@
 const { MongoClient } = require("mongodb");
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') }); // טוען את משתני הסביבה
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
-// הגדרת מחרוזת החיבור ל-MongoDB עם משתני סביבה
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+console.log(process.env.DB_PASSWORD)
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/?retryWrites=true&w=majority&appName=RachelEfinger`;
+const client = new MongoClient(uri);
 
 const internal = {
   db: null,
